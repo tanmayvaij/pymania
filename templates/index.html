@@ -3,79 +3,161 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Flexibase - Modular Backend as a Service</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <form
-      method="post"
-      accept="/"
-      class="text-gray-600 py-10 body-font flex items-center justify-center"
-    >
-        {% csrf_token %}
-      <div class="w-96 bg-white flex flex-col">
-       
-        <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">
-          Registration form
-        </h2>
-
-        <div class="relative mb-4">
-          <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-          />
-        </div>
-
-        <div class="relative mb-4">
-          <label for="email" class="leading-7 text-sm text-gray-600"
-            >Email</label
+  <body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold text-blue-600">Flexibase</h1>
+        <nav class="space-x-6">
+          <a href="#features" class="text-gray-700 hover:text-blue-600"
+            >Features</a
           >
-          <input
-            type="email"
-            id="email"
-            name="email"
-            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-          />
-        </div>
-
-        <div class="relative mb-4">
-          <label for="phonenumber" class="leading-7 text-sm text-gray-600"
-            >Phone number</label
+          <a href="#modules" class="text-gray-700 hover:text-blue-600"
+            >Modules</a
           >
-          <input
-            type="tel"
-            id="phonenumber"
-            name="phonenumber"
-            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-          />
-        </div>
-
-        <button
-          class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+          <a href="#docs" class="text-gray-700 hover:text-blue-600"
+            >Documentation</a
+          >
+          <a href="#contact" class="text-gray-700 hover:text-blue-600"
+            >Contact</a
+          >
+        </nav>
+        <a
+          href="#get-started"
+          class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
         >
-          Button
-        </button>
+          Get Started
+        </a>
       </div>
-    </form>
+    </header>
 
-    <div class="border flex items-center justify-center py-16">
-        {% if name %}
-        <table>
-            <tr>
-                <th class="border px-10">Name</th>
-                <th class="border px-10">Email</th>
-                <th class="border px-10">Phone number</th>
-            </tr>
-            <tr>
-                <td class="border px-10">{{ name }}</td>
-                <td class="border px-10">{{ email }}</td>
-                <td class="border px-10">{{ phonenumber }}</td>
-            </tr>
-        </table>
-        {% endif %}
-    </div>
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-r from-blue-600 to-green-500 text-white py-20"
+    >
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-extrabold">
+          The Modular Backend Solution You’ve Been Waiting For
+        </h2>
+        <p class="mt-4 text-lg">
+          Flexibase is a lightweight, customizable, and resource-efficient
+          backend platform that gives developers complete control.
+        </p>
+        <div class="mt-6 space-x-4">
+          <a
+            href="#get-started"
+            class="bg-white text-blue-600 py-2 px-6 rounded hover:bg-gray-200 font-bold"
+          >
+            Launch Flexibase
+          </a>
+          <a
+            href="#learn-more"
+            class="border border-white py-2 px-6 rounded hover:bg-white hover:text-blue-600 font-bold"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16">
+      <div class="container mx-auto px-6">
+        <h3 class="text-3xl font-bold text-center">Why Choose Flexibase?</h3>
+        <p class="text-center mt-4 text-gray-600">
+          Flexibase solves the challenges developers face with current BaaS
+          platforms by offering modularity, efficiency, and control.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+          <!-- Feature 1 -->
+          <div class="bg-white shadow-md rounded-lg p-6 text-center">
+            <h4 class="text-xl font-bold text-blue-600">Modular Services</h4>
+            <p class="mt-2 text-gray-600">
+              Deploy only what you need: authentication, database, or storage.
+            </p>
+          </div>
+          <!-- Feature 2 -->
+          <div class="bg-white shadow-md rounded-lg p-6 text-center">
+            <h4 class="text-xl font-bold text-blue-600">Resource-Efficient</h4>
+            <p class="mt-2 text-gray-600">
+              Optimized for small-scale environments like AWS t2.micro.
+            </p>
+          </div>
+          <!-- Feature 3 -->
+          <div class="bg-white shadow-md rounded-lg p-6 text-center">
+            <h4 class="text-xl font-bold text-blue-600">Full Customization</h4>
+            <p class="mt-2 text-gray-600">
+              Get complete control with self-hosted solutions and source code
+              access.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modules" class="py-16 bg-gray-100">
+      <div class="container mx-auto px-6">
+        <h3 class="text-3xl font-bold text-center">
+          Explore Flexibase Modules
+        </h3>
+        <p class="text-center mt-4 text-gray-600">
+          Tailor your backend with our modular architecture.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+          <!-- Module 1 -->
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <h4 class="text-xl font-bold text-blue-600">Authentication</h4>
+            <p class="mt-2 text-gray-600">
+              Secure user management with JWT-based authentication and OAuth
+              support.
+            </p>
+          </div>
+          <!-- Module 2 -->
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <h4 class="text-xl font-bold text-blue-600">Database</h4>
+            <p class="mt-2 text-gray-600">
+              Manage data with PostgreSQL or SQLite, CRUD APIs, and automated
+              migrations.
+            </p>
+          </div>
+          <!-- Module 3 -->
+          <div class="bg-white shadow-md rounded-lg p-6">
+            <h4 class="text-xl font-bold text-blue-600">Storage</h4>
+            <p class="mt-2 text-gray-600">
+              S3-compatible file management with access control and file
+              versioning.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="get-started" class="py-16 bg-blue-600 text-white text-center">
+      <h3 class="text-3xl font-bold">Ready to Build with Flexibase?</h3>
+      <p class="mt-4">
+        Sign up and start creating modular backends tailored to your needs.
+      </p>
+      <a
+        href="#contact"
+        class="mt-6 bg-white text-blue-600 py-3 px-6 rounded inline-block font-bold hover:bg-gray-200"
+      >
+        Get Started for Free
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-8">
+      <div class="container mx-auto px-6 text-center">
+        <p>&copy; 2024 Flexibase. All Rights Reserved.</p>
+        <p class="mt-2">Designed by Tanmay Vaij.</p>
+      </div>
+    </footer>
   </body>
 </html>
